@@ -1,98 +1,66 @@
-function getMoveName(argMoveId) {
-  if (argMoveId == 1) {
-    return "rock";
-  } else if (argMoveId == 2) {
-    return "paper";
-  } else if (argMoveId == 3) {
-    return "scissors";
-  } else {
-    printMessage("I don't know this move id " + argMoveId + ".");
-    return "unknown move";
+function playGame(playerInput) {
+  clearMessages();
+  function getMoveName(argMoveId) {
+    if (argMoveId == 1) {
+      return "rock";
+    } else if (argMoveId == 2) {
+      return "paper";
+    } else if (argMoveId == 3) {
+      return "scissors";
+    } else {
+      printMessage("I don't know this move id " + argMoveId + ".");
+      return "unknown move";
+    }
   }
-}
 
-let randomNumber = Math.floor(Math.random() * 3 + 1);
+  let randomNumber = Math.floor(Math.random() * 3 + 1);
 
-console.log("The drawn number is: " + randomNumber);
+  console.log("The drawn number is: " + randomNumber);
 
-let computerMove = getMoveName(randomNumber);
+  let computerMove = getMoveName(randomNumber);
 
-/*
-if (randomNumber == 1) {
-  computerMove = "rock";
-} else if (randomNumber == 2) {
-  computerMove = "paper";
-} else if (randomNumber == 3) {
-  computerMove = "scissors";
-}
-*/
+  printMessage("My move is: " + computerMove);
 
-printMessage("My move is: " + computerMove);
+  console.log("Player entered: " + playerInput);
 
-let playerInput = prompt("Choose your move! 1: rock, 2: paper, 3: scissors.");
+  let playerMove = getMoveName(playerInput);
 
-console.log("Player entered: " + playerInput);
+  printMessage("Your move is: " + playerMove);
 
-let playerMove = getMoveName(playerInput);
-
-printMessage("Your move is: " + playerMove);
-
-/*
-if (playerInput == "1") {
-  playerMove = "rock";
-} else if (playerInput == "2") {
-  playerMove = "paper";
-} else if (playerInput == "3") {
-  playerMove = "scissors";
-}
-*/
-function displayResult(argComputerMove, argPlayerMove) {
-  printMessage("I played " + argComputerMove + ", and you " + argPlayerMove);
-  if (
-    (computerMove == "rock" && playerMove == "paper") ||
-    (computerMove == "scissors" && playerMove == "rock") ||
-    (computerMove == "paper" && playerMove == "scissors")
-  ) {
-    printMessage("You win!");
-  } else if (
-    (computerMove == "paper" && playerMove == "rock") ||
-    (computerMove == "rock" && playerMove == "scissors") ||
-    (computerMove == "scissors" && playerMove == "paper")
-  ) {
-    printMessage("I win!");
-  } else if (
-    (computerMove == "rock" && playerMove == "rock") ||
-    (computerMove == "paper" && playerMove == "paper") ||
-    (computerMove == "scissors" && playerMove == "scissors")
-  ) {
-    printMessage("It is a tie");
-  } else {
-    printMessage("Try again!");
+  function displayResult(argComputerMove, argPlayerMove) {
+    printMessage("I played " + argComputerMove + ", and you " + argPlayerMove);
+    if (
+      (computerMove == "rock" && playerMove == "paper") ||
+      (computerMove == "scissors" && playerMove == "rock") ||
+      (computerMove == "paper" && playerMove == "scissors")
+    ) {
+      printMessage("You win!");
+    } else if (
+      (computerMove == "paper" && playerMove == "rock") ||
+      (computerMove == "rock" && playerMove == "scissors") ||
+      (computerMove == "scissors" && playerMove == "paper")
+    ) {
+      printMessage("I win!");
+    } else if (
+      (computerMove == "rock" && playerMove == "rock") ||
+      (computerMove == "paper" && playerMove == "paper") ||
+      (computerMove == "scissors" && playerMove == "scissors")
+    ) {
+      printMessage("It is a tie!");
+    } else {
+      printMessage("Try again!");
+    }
   }
+
+  displayResult(computerMove, playerMove);
 }
 
-displayResult(computerMove, playerMove);
-
-/*
-if (
-  (computerMove == "rock" && playerMove == "paper") ||
-  (computerMove == "scissors" && playerMove == "rock") ||
-  (computerMove == "paper" && playerMove == "scissors")
-) {
-  printMessage("You win!");
-} else if (
-  (computerMove == "paper" && playerMove == "rock") ||
-  (computerMove == "rock" && playerMove == "scissors") ||
-  (computerMove == "scissors" && playerMove == "paper")
-) {
-  printMessage("I win!");
-} else if (
-  (computerMove == "rock" && playerMove == "rock") ||
-  (computerMove == "paper" && playerMove == "paper") ||
-  (computerMove == "scissors" && playerMove == "scissors")
-) {
-  printMessage("Draw!");
-} else {
-  printMessage("Try again!");
-}
-*/
+document.getElementById("play-rock").addEventListener("click", function() {
+  playGame("1");
+});
+document.getElementById("play-paper").addEventListener("click", function() {
+  playGame("2");
+});
+document.getElementById("play-scissors").addEventListener("click", function() {
+  playGame("3");
+});
