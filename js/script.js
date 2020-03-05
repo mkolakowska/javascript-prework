@@ -30,18 +30,18 @@ if (playerInput == "1") {
 
 printMessage("Your move is: " + playerMove);
 
-if (computerMove == "rock" && playerMove == "paper") {
+if (
+  (computerMove == "rock" && playerMove == "paper") ||
+  (computerMove == "scissors" && playerMove == "rock") ||
+  (computerMove == "paper" && playerMove == "scissors")
+) {
   printMessage("You win!");
-} else if (computerMove == "paper" && playerMove == "rock") {
+} else if (
+  (computerMove == "paper" && playerMove == "rock") ||
+  (computerMove == "rock" && playerMove == "scissors") ||
+  (computerMove == "scissors" && playerMove == "paper")
+) {
   printMessage("I win!");
-} else if (computerMove == "rock" && playerMove == "scissors") {
-  printMessage("I win!");
-} else if (computerMove == "scissors" && playerMove == "paper") {
-  printMessage("I win!");
-} else if (computerMove == "scissors" && playerMove == "rock") {
-  printMessage("You win!");
-} else if (computerMove == "paper" && playerMove == "scissors") {
-  printMessage("You win!");
 } else if (
   (computerMove == "rock" && playerMove == "rock") ||
   (computerMove == "paper" && playerMove == "paper") ||
