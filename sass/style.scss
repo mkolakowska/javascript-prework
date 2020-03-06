@@ -1,0 +1,81 @@
+/* Variables */
+
+$primary-color: #272727;
+$secondary-color: #ff652f;
+$text-color: #fff;
+
+/* Global */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: $primary-color;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1;
+  color: $text-color;
+  margin: 0;
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-weight: 400;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1098px;
+}
+
+/* Score */
+
+.score {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  p {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Match */
+
+.match {
+  min-width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .hands {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .options {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+      width: 150px;
+      height: 50px;
+      background: none;
+      border: none;
+      background: $secondary-color;
+      color: $text-color;
+      font-size: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .computer-hand {
+    transform: rotateY(180deg);
+  }
+}

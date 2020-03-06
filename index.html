@@ -2,18 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Kamień, papier, nożyce</title>
+    <title>Rock paper and scissors</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/c39c162e6d.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="container">
-      <div id="buttons">
-        <button id="play-rock">rock</button>
-        <button id="play-paper">paper</button>
-        <button id="play-scissors">scissors</button>
+    <section class="game">
+      <div class="container">
+        <div class="score">
+          <div class="player-score">
+            <h2>Player</h2>
+            <p>0</p>
+          </div>
+          <div class="computer-score">
+            <h2>Computer</h2>
+            <p>0</p>
+          </div>
+        </div>
       </div>
-      <div id="messages"></div>
-    </div>
+      <div class="match">
+        <h2 class="winner">Choose an option</h2>
+        <div class="hands">
+          <img src="images/rock-hand.png" alt="" class="player-hand" />
+          <div id="messages"></div>
+          <img src="images/rock-hand.png" alt="" class="computer-hand" />
+        </div>
+        <div class="options">
+          <button id="play-rock">rock</button>
+          <button id="play-paper">paper</button>
+          <button id="play-scissors">scissors</button>
+        </div>
+      </div>
+    </section>
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>
   </body>

@@ -7,9 +7,6 @@ function playGame(playerInput) {
       return "paper";
     } else if (argMoveId == 3) {
       return "scissors";
-    } else {
-      printMessage("I don't know this move id " + argMoveId + ".");
-      return "unknown move";
     }
   }
 
@@ -19,13 +16,13 @@ function playGame(playerInput) {
 
   let computerMove = getMoveName(randomNumber);
 
-  printMessage("My move is: " + computerMove);
+  /*printMessage("My move is: " + computerMove);*/
 
   console.log("Player entered: " + playerInput);
 
   let playerMove = getMoveName(playerInput);
 
-  printMessage("Your move is: " + playerMove);
+  /*printMessage("Your move is: " + playerMove);*/
 
   function displayResult(argComputerMove, argPlayerMove) {
     printMessage("I played " + argComputerMove + ", and you " + argPlayerMove);
@@ -41,14 +38,8 @@ function playGame(playerInput) {
       (computerMove == "scissors" && playerMove == "paper")
     ) {
       printMessage("I win!");
-    } else if (
-      (computerMove == "rock" && playerMove == "rock") ||
-      (computerMove == "paper" && playerMove == "paper") ||
-      (computerMove == "scissors" && playerMove == "scissors")
-    ) {
+    } else if (computerMove === playerMove) {
       printMessage("It is a tie!");
-    } else {
-      printMessage("Try again!");
     }
   }
 
