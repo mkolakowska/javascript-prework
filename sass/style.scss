@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono&display=swap&subset=latin-ext");
+
 /* Variables */
 
 $primary-color: #272727;
 $secondary-color: #ff652f;
 $text-color: #fff;
+
+$font-header: "Space Mono", monospace;
+$font-text: "Open Sans", sans-serif;
 
 /* Global */
 
@@ -20,29 +25,131 @@ body {
   color: $text-color;
   margin: 0;
   text-align: center;
+  font-size: 16px;
+  font-family: $font-text;
 }
 
 h1,
 h2 {
   font-weight: 400;
+  font-family: $font-header;
 }
 
 .container {
   margin: 0 auto;
   max-width: 1098px;
+  padding: 0 20px;
 }
 
+section {
+  padding: 60px 0;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  border: none;
+  background: $secondary-color;
+  color: $text-color;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 9px #999;
+
+  &:hover {
+    background: darken($secondary-color, 3%);
+  }
+
+  &:active {
+    background: darken($secondary-color, 3%);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+}
+
+/* Intro */
+
+.intro {
+  h1 {
+    text-transform: uppercase;
+  }
+
+  hr {
+    margin: 48px 0;
+  }
+  .read-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.4); /* Black w/opacity */
+
+    .modal-content {
+      position: relative;
+      background: #999;
+      margin: auto;
+      padding: 0;
+
+      width: 50%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      animation-name: animatetop;
+      animation-duration: 0.4s;
+
+      /* The Close Button */
+      .close {
+        color: $text-color;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+
+        &:hover,
+        focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+
+      .modal-header {
+        padding: 2px 16px;
+        background: $secondary-color;
+      }
+
+      .modal-body {
+        padding: 2px 16px;
+        text-align: left;
+      }
+    }
+
+    /* Add Animation */
+    @keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0;
+      }
+      to {
+        top: 0;
+        opacity: 1;
+      }
+    }
+  }
+}
 /* Score */
 
 .score {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  p {
-    text-align: center;
-    padding: 10px;
-  }
+  padding: 60px 0;
 }
 
 /* Match */
@@ -53,29 +160,9 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  .hands {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   .options {
     display: flex;
     justify-content: space-around;
-
-    button {
-      width: 150px;
-      height: 50px;
-      background: none;
-      border: none;
-      background: $secondary-color;
-      color: $text-color;
-      font-size: 20px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  }
-
-  .computer-hand {
-    transform: rotateY(180deg);
+    padding: 48px 0;
   }
 }

@@ -12,28 +12,50 @@
   <body>
     <section class="game">
       <div class="container">
-        <div class="score">
+        <header class="intro">
+          <h1>Rock paper scissors</h1>
+          <!-- Trigger/Open The Modal -->
+          <button id="read">get started</button>
+          <hr>
+          <!-- The Modal -->
+          <div id="read-modal" class="read-modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>The rules of rock paper scissors</h2>
+              </div>
+              <div class="modal-body">
+                <p>
+                  The outcome of the game is determined by 3 simple rules:
+                  <ul>
+                    <li>Rock wins against scissors.</li>
+                    <li>Scissors win against paper.</li>
+                    <li>Paper wins against rock.</li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div id="score" class="score">
           <div class="player-score">
-            <h2>Player</h2>
-            <p>0</p>
+            <h2>Player: 0</h2>
           </div>
           <div class="computer-score">
-            <h2>Computer</h2>
-            <p>0</p>
+            <h2>Computer: 0</h2>
           </div>
         </div>
       </div>
       <div class="match">
-        <h2 class="winner">Choose an option</h2>
-        <div class="hands">
-          <img src="images/rock-hand.png" alt="" class="player-hand" />
-          <div id="messages"></div>
-          <img src="images/rock-hand.png" alt="" class="computer-hand" />
-        </div>
+        <h2 id="messages">Choose an option</h2>
         <div class="options">
-          <button id="play-rock">rock</button>
-          <button id="play-paper">paper</button>
-          <button id="play-scissors">scissors</button>
+          <img id="play-rock" src="./images/rock-hand.png" alt="">
+          <img id="play-paper" src="./images/paper-hand.png" alt="">
+          <img id="play-scissors" src="./images/scissors-hand.png" alt="">
+        </div>
+        <div class="restart">
+          <button id="restart" class="restart-btn">restart game</button>
         </div>
       </div>
     </section>
