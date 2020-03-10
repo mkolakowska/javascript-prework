@@ -33,9 +33,9 @@ const updateScore = {
   pScore: 0,
   cScore: 0
 };
-function playGame(playerInput) {
+const playGame = function(playerInput) {
   clearMessages();
-  function getMoveName(argMoveId) {
+  const getMoveName = function(argMoveId) {
     if (argMoveId == 1) {
       return "rock";
     } else if (argMoveId == 2) {
@@ -43,23 +43,23 @@ function playGame(playerInput) {
     } else if (argMoveId == 3) {
       return "scissors";
     }
-  }
+  };
 
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
 
   console.log("The drawn number is: " + randomNumber);
 
-  let computerMove = getMoveName(randomNumber);
+  const computerMove = getMoveName(randomNumber);
 
   /*printMessage("My move is: " + computerMove);*/
 
   console.log("Player entered: " + playerInput);
 
-  let playerMove = getMoveName(playerInput);
+  const playerMove = getMoveName(playerInput);
 
   /*printMessage("Your move is: " + playerMove);*/
 
-  function displayResult(argComputerMove, argPlayerMove) {
+  const displayResult = function(argComputerMove, argPlayerMove) {
     printMessage("I played " + argComputerMove + ", and you " + argPlayerMove);
     if (
       (computerMove == "rock" && playerMove == "paper") ||
@@ -78,13 +78,13 @@ function playGame(playerInput) {
     } else if (computerMove === playerMove) {
       printMessage("It's A Draw");
     }
-  }
+  };
   displayResult(computerMove, playerMove);
   //Update Score
 
   score.innerHTML = `<h2>Player: ${updateScore.pScore}</h2>
   <h2>Computer: ${updateScore.cScore}</h2>`;
-}
+};
 
 // Restart game
 function restartGame() {
