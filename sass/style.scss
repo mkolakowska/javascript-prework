@@ -20,7 +20,6 @@ $font-text: "Open Sans", sans-serif;
 body {
   background: $primary-color;
   height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1;
   color: $text-color;
   margin: 0;
@@ -45,7 +44,7 @@ section {
   padding: 60px 0;
 }
 
-button {
+.btn {
   width: 150px;
   height: 50px;
   border: none;
@@ -79,7 +78,7 @@ button {
   hr {
     margin: 48px 0;
   }
-  .read-modal {
+  .game-info {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -92,7 +91,7 @@ button {
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.4); /* Black w/opacity */
 
-    .modal-content {
+    .game-content {
       position: relative;
       background: #999;
       margin: auto;
@@ -105,11 +104,14 @@ button {
       animation-duration: 0.4s;
 
       /* The Close Button */
-      .close {
+      .btn-close {
         color: $text-color;
         float: right;
         font-size: 28px;
         font-weight: bold;
+        border: none;
+        background: none;
+        outline: none;
 
         &:hover,
         focus {
@@ -119,12 +121,12 @@ button {
         }
       }
 
-      .modal-header {
+      .game-header {
         padding: 2px 16px;
         background: $secondary-color;
       }
 
-      .modal-body {
+      .game-body {
         padding: 2px 16px;
         text-align: left;
       }
